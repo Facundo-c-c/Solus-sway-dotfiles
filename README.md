@@ -14,3 +14,7 @@
 - [ ] add notification suport 
 - [ ] add install.sh script
 - [ ] add animations 
+
+## rofi menus 
+[power](https://github.com/jluttine/rofi-power-menu)
+[wifi](https://github.com/zbaylin/rofi-wifi-menu)
