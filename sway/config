@@ -1,4 +1,4 @@
-exec swaybg -i Imágenes/wallpaper/3131056.jpg
+exec swaybg -i "~/.config/sway/3131056.jpg"
 exec waybar
 
 ### Variables
@@ -33,7 +33,7 @@ set $menu rofi -show drun
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaylock  --image Imágenes/wallpaper/3131056.jpg -f' \
+          timeout 300 'swaylock  --image ~/.config/sway/3131056.jpg -f' \
           timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           before-sleep 'swaylock -f -c 000000'
           for_window [class=".*"] inhibit_idle fullscreen
