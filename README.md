@@ -6,6 +6,10 @@
 
 ## Installation
 
-```bash
-git clone https://github.com/aruyu/sway-dotfiles.git ~/Documents/sway-dotfiles/
-```
+-sway
+-rofi 
+-kitty 
+-waybar
+-grim 
+-iw 
+-
