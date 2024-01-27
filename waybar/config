@@ -1,0 +1,87 @@
+{
+    "position": "top",
+    "height": 36,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray","custom/separator","network","custom/separator","pulseaudio","custom/separator","battery","custom/separator","custom/power",],
+
+ // modules
+    "sway/mode": {
+      "format": "{}",
+      "max-length": 40
+    },
+
+    "sway/workspaces": {
+    	"all-outputs": true,	
+    "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "focused": ""
+        },
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "tray": {
+        "icon-size": 17,
+        "spacing":3,
+    },
+
+
+    "battery": {
+        "states": {
+            //"good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format":"{icon}   {capacity}% ",
+        "format-charging":"    {capacity}%",
+        "format-plugged":"   {capacity}%",
+        "format-icons": ["","","","",""]
+    },
+
+    "pulseaudio": {
+       "scroll-step": 5, 
+        "format":"{icon}   {volume}%",
+        "format-icons": {
+        "default": ["","","",""]
+      },
+      "on-click":"pavucontrol"
+    },
+
+    "network": {
+	"interface": "wlp1s0",
+	"format": "{ifname}",
+	"format-wifi":"   {essid} ",
+	"format-ethernet": "{ifname} ",
+	"format-disconnected":"󰖪 ",
+	"format-disconnected":"󰖪 ",
+	"tooltip-format": "{ifname}",
+	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+	"tooltip-format-ethernet": "{ifname} ",
+	"tooltip-format-disconnected": "Disconnected",
+	"max-length": 60,
+    "on-click":"sh /home/facundo/.config/rofi/rofi-wifi-menu.sh" 
+    },
+
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+   },
+    "custom/power": {
+        "format":"⏻ ",
+        "on-click":"rofi -show power-menu -modi power-menu:rofi-power-menu",
+ },
+},
