@@ -1,4 +1,4 @@
-exec swaybg -i "~/.config/sway/3131056.jpg"
+exec swaybg -i ~/.config/sway/3131056.jpg
 exec waybar
 
 ### Variables
