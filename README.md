@@ -9,3 +9,8 @@
 - waybar
 - grim 
 - iw
+
+### to do
+- [ ] add notification suport 
+- [ ] add install.sh script
+- [ ] add animations 
