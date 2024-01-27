@@ -5,11 +5,10 @@
 
 
 ## Installation
+- sway
+- rofi 
+- kitty 
+- waybar
+- grim 
+- iw 
 
--sway
--rofi 
--kitty 
--waybar
--grim 
--iw 
--
