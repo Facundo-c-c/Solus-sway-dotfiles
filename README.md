@@ -10,7 +10,7 @@
 - grim 
 - iw
 
-### to do
+## to do
 - [ ] add notification suport 
 - [ ] add install.sh script
 - [ ] add animations 
