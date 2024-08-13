@@ -1,0 +1,20 @@
+{
+    "label" : "lock",
+    "action" : "swaylock -f -i ~/Pictures/wallpaper/peakpx_blur.jpg",
+    "text" : "",
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "",
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : "",
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "",
+}

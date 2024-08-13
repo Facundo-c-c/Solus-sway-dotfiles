@@ -1,62 +1,47 @@
-exec swaybg -i ~/.config/sway/3131056.jpg
-exec waybar
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+# Fix for slow startup of GTK apps https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
+
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+output * bg ~/Pictures/wallpaper/peakpx.jpg fill 
+
+exec waybar -c ~/.config/sway/waybar/config -s ~/.config/sway/waybar/style.css
 
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
+
 set $mod Mod4
-# Home row direction keys, like vim
+
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
 set $term kitty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu rofi -show drun
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-#output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+set $menu wofi --show drun
 
-### Idle configuration
-#
-# Example configuration:
-#
+### atajos personales
+
+bindsym XF86MonBrightnessUp exec sh ~/.luz +
+bindsym XF86MonBrightnessDown exec sh ~/.luz -
+
+bindsym $mod+w exec wlogout -b 2
+
+bindsym $mod+p exec sh .screenshot
+
+### swaylock
+
  exec swayidle -w \
-          timeout 300 'swaylock  --image ~/.config/sway/3131056.jpg -f' \
+          timeout 300 'swaylock  --image ~/Pictures/wallpaper/peakpx_blur.jpg -f' \
           timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           before-sleep 'swaylock -f -c 000000'
           for_window [class=".*"] inhibit_idle fullscreen
           for_window [app_id=".*"] inhibit_idle fullscreen
-
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
@@ -71,29 +56,14 @@ set $menu rofi -show drun
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
+    # floating windows
     floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    
-    #screenshot
-    bindsym $mod+o exec grim 
-    #rofi power menu      
-    bindsym $mod+p exec rofi -show power-menu -modi power-menu:rofi-power-menu
-    #rofi wifi menu
-    bindsym $mod+Shift+n exec sh /home/facundo/.config/rofi/rofi-wifi-menu.sh
-    #volume
-    bindsym --locked XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-    bindsym --locked XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -113,6 +83,7 @@ set $menu rofi -show drun
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -156,7 +127,6 @@ set $menu rofi -show drun
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
@@ -196,10 +166,10 @@ mode "resize" {
     bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 3px
+    bindsym Down resize grow height  3px
+    bindsym Up resize shrink height  3px
+    bindsym Right resize grow width  3px
 
     # Return to default mode
     bindsym Return mode "default"
@@ -207,17 +177,18 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+input * {
+    xkb_layout "es"
+}
+
 #border windows changes
 default_border pixel 3px
-gaps outer 5px
-gaps inner 5px
+gaps outer 2px
+gaps inner 2px
 #border color
-client.focused #CB6875 #CB6875 #CB6875 #CB6875
-client.unfocused #211C3B #211C3B #211C3B #211C3B
+client.unfocused #2f3937 #2f3937 #2f3937 #2f3937
+client.focused #828887 #828887 #828887 #828887
 
-include @sysconfdir@/sway/config.d/*
+seat seat0 xcursor_theme Future-black-cursors 24
 
-#change the keyboard you need
-input type:keyboard {
-    xkb_layout es 
-}
+#include /etc/sway/config.d/*

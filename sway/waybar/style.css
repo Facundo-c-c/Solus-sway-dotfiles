@@ -1,0 +1,40 @@
+*{
+  font-family: JetBrainsMono;
+  padding: 1px 1px;
+  color: #c2c1c2;
+}
+
+window#waybar{
+  font-size: 12px;
+  background-color: #0D0A0B;
+}
+
+#custom-music.Playing,
+#custom-music.Paused,
+#custom-music.Stopped,
+#network,
+#pulseaudio,
+#tray,
+#clock{
+  margin: 3px;
+  padding: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#workspaces {
+  font-size: 12px;
+  margin: 2px 0px;
+  color: black;
+}
+#workspaces button.urgent * {
+  color: #630330;
+}
+#workspaces button.persistent{
+  color: #545154;
+}
+#workspaces button.empty{
+  color: #3f3f3f;
+}
