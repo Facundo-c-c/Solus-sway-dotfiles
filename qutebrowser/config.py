@@ -1,0 +1,111 @@
+config.load_autoconfig()
+
+# Definición de colores ajustados
+base00 = '#1B1B1B'  # Fondo principal oscuro
+base01 = '#262626'  # Fondo ligeramente más claro
+base02 = '#333333'  # Otro tono de fondo
+base03 = '#4D4D4D'  # Aún más claro
+base04 = '#666666'  # Gris oscuro
+base05 = '#999999'  # Gris medio (texto principal)
+base06 = '#B3B3B3'  # Gris claro
+base07 = '#D9D9D9'  # Gris más claro
+base08 = '#CC6666'  # Rojo suave (alertas)
+base09 = '#DE935F'  # Naranja suave
+base0A = '#F0C674'  # Amarillo suave
+base0B = '#B5BD68'  # Verde suave
+base0C = '#8ABEB7'  # Cian suave
+base0D = '#81A2BE'  # Azul suave
+base0E = '#B294BB'  # Magenta suave
+base0F = '#A3685A'  # Marrón suave
+
+# Aplicación de colores a qutebrowser
+c.colors.completion.category.bg = base00
+c.colors.completion.category.border.bottom = base00
+c.colors.completion.category.border.top = base00
+c.colors.completion.category.fg = base05
+c.colors.completion.even.bg = base01
+c.colors.completion.fg = base05
+c.colors.completion.item.selected.bg = base03
+c.colors.completion.item.selected.border.bottom = base03
+c.colors.completion.item.selected.border.top = base03
+c.colors.completion.item.selected.fg = base07
+c.colors.completion.match.fg = base0B
+c.colors.completion.odd.bg = base02
+c.colors.completion.scrollbar.bg = base01
+c.colors.completion.scrollbar.fg = base05
+
+c.colors.downloads.bar.bg = base00
+c.colors.downloads.error.bg = base08
+c.colors.downloads.error.fg = base07
+c.colors.downloads.start.bg = base0D
+c.colors.downloads.start.fg = base07
+c.colors.downloads.stop.bg = base0B
+c.colors.downloads.stop.fg = base07
+
+c.colors.hints.bg = base0A
+c.colors.hints.fg = base07
+c.colors.hints.match.fg = base05
+
+c.colors.keyhint.bg = base00
+c.colors.keyhint.fg = base05
+c.colors.keyhint.suffix.fg = base05
+
+c.colors.messages.error.bg = base08
+c.colors.messages.error.border = base08
+c.colors.messages.error.fg = base07
+c.colors.messages.info.bg = base00
+c.colors.messages.info.border = base00
+c.colors.messages.info.fg = base05
+c.colors.messages.warning.bg = base0E
+c.colors.messages.warning.border = base0E
+c.colors.messages.warning.fg = base07
+
+c.colors.prompts.bg = base00
+c.colors.prompts.border = f'1px solid {base05}'
+c.colors.prompts.fg = base05
+c.colors.prompts.selected.bg = base03
+
+c.colors.statusbar.caret.bg = base0E
+c.colors.statusbar.caret.fg = base07
+c.colors.statusbar.caret.selection.bg = base0D
+c.colors.statusbar.caret.selection.fg = base07
+c.colors.statusbar.command.bg = base00
+c.colors.statusbar.command.fg = base05
+c.colors.statusbar.command.private.bg = base01
+c.colors.statusbar.command.private.fg = base05
+c.colors.statusbar.insert.bg = base0B
+c.colors.statusbar.insert.fg = base07
+c.colors.statusbar.normal.bg = base00
+c.colors.statusbar.normal.fg = base05
+c.colors.statusbar.passthrough.bg = base0D
+c.colors.statusbar.passthrough.fg = base07
+c.colors.statusbar.private.bg = base01
+c.colors.statusbar.private.fg = base05
+c.colors.statusbar.progress.bg = base05
+c.colors.statusbar.url.error.fg = base08
+c.colors.statusbar.url.fg = base05
+c.colors.statusbar.url.hover.fg = base05
+c.colors.statusbar.url.success.http.fg = base0B
+c.colors.statusbar.url.success.https.fg = base0B
+c.colors.statusbar.url.warn.fg = base0E
+
+c.colors.tabs.bar.bg = base00
+c.colors.tabs.even.bg = base00
+c.colors.tabs.even.fg = base05
+c.colors.tabs.indicator.error = base08
+c.colors.tabs.indicator.start = base0D
+c.colors.tabs.indicator.stop = base0B
+c.colors.tabs.odd.bg = base00
+c.colors.tabs.odd.fg = base05
+c.colors.tabs.selected.even.bg = base03
+c.colors.tabs.selected.even.fg = base05
+c.colors.tabs.selected.odd.bg = base03
+c.colors.tabs.selected.odd.fg = base05
+
+c.statusbar.show = 'never'
+c.input.insert_mode.auto_load = False
+c.input.insert_mode.auto_enter = False
+
+c.tabs.show = 'multiple'
+
+#config.set("colors.webpage.darkmode.enabled", True)s
